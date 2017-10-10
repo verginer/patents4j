@@ -1,0 +1,8 @@
+dirs:
+    processed: 'data/processed'
+    interim: 'data/interim'
+    external: 'data/external'
+    raw: 'data/raw'
+    rules: 'src/rules'
+    tmp: 'data/interim/tmp'
+
