@@ -7,10 +7,9 @@ import munch
 # makes the config accessible through dot notation
 config = munch.munchify(config)
 
-
-RAW = config.DIRS.RAW
-INT = config.DIRS.INTERIM
-PRO = config.DIRS.PROCESSED
+RAW = config.dirs.raw
+INT = config.dirs.interim
+PRO = config.dirs.processed
 
 
 #=========================================================================
@@ -18,14 +17,14 @@ PRO = config.DIRS.PROCESSED
 #=========================================================================
 #
 #rule all:
-#    input: protect(INTERIM+'/deals.csv')
+#    input: protect(interim+'/deals.csv')
 #
 #
 #rule report:
 #    input:
-#        RAW+'/recap_raw.csv',
+#        raw+'/recap_raw.csv',
 #        lambda wildcards: config["samples"][wildcards.sample]
-#    output: protect/temp(INTERIM+'/deals.csv')
+#    output: protect/temp(interim+'/deals.csv')
 #    threads: 3
 #    params:
 #        rg = "@RG\tID:{sample}\tSM:{sample}"
